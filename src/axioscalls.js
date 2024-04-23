@@ -3,6 +3,7 @@ let g_devurl = ''
 if (import.meta.env.DEV) {
     g_devurl = 'https://mygolux.lausanne.ch'    
 }
+console.log("g_devurl: " + g_devurl)
 
 export async function getVdLOrganigrammeLDAPDirections() {
     const urlor = `${g_devurl}/public/annuaire_interne/directions_services_h.php`

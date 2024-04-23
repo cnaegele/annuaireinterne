@@ -137,7 +137,7 @@
       }
       lesData.dateDernierLoginEmploye = ''
       if (lesData.dataEmploye[0].hasOwnProperty('lastlogon')) {
-        if (lesData.dataEmploye[0].hasOwnProperty('lastlogon') != '0') {
+        if (lesData.dataEmploye[0].lastlogon[0] != '0') {
           lesData.dateDernierLoginEmploye = `Date dernier login: ${lesData.dataEmploye[0].lastlogon[0]}`
         }
       }
