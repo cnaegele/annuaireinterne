@@ -1,0 +1,11 @@
+input.criteres {
+    background-color:grey;
+    border: 1px solid white;
+}
+span.cardTitre {
+    font-size: x-large;
+    font-weight: bold;
+}
+span.listeGroupes {
+    font-size: x-small;
+}
