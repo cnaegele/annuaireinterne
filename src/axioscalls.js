@@ -3,10 +3,11 @@ let g_devurl = ''
 if (import.meta.env.DEV) {
     g_devurl = 'https://mygolux.lausanne.ch'    
 }
+const g_pathurl = '/public/annuaireinterne/server/'
 console.log("g_devurl: " + g_devurl)
 
 export async function getVdLOrganigrammeLDAPDirections() {
-    const urlor = `${g_devurl}/public/annuaire_interne/directions_services_h.php`
+    const urlor = `${g_devurl}${g_pathurl}directions_services_h.php`
     const response = await axios.get(urlor)
         .catch(function (error) {
             return traiteAxiosError(error)
@@ -17,7 +18,7 @@ export async function getVdLOrganigrammeLDAPDirections() {
 }
 
 export async function listeEmployesParDirection(libelle) {
-    const urlle = `${g_devurl}/public/annuaire_interne/users_liste_direction.php`
+    const urlle = `${g_devurl}/${g_pathurl}users_liste_direction.php`
     const params = new URLSearchParams([['direction', libelle]])
     const response = await axios.get(urlle, {params})
         .catch(function (error) {
@@ -29,7 +30,7 @@ export async function listeEmployesParDirection(libelle) {
 }
 
 export async function listeEmployesParService(libelle) {
-    const urlle = `${g_devurl}/public/annuaire_interne/users_liste_service.php`
+    const urlle = `${g_devurl}${g_pathurl}users_liste_service.php`
     const params = new URLSearchParams([['service', libelle]])
     const response = await axios.get(urlle, {params})
         .catch(function (error) {
@@ -41,7 +42,7 @@ export async function listeEmployesParService(libelle) {
 }
 
 export async function listeEmployesParSousService(libelle) {
-    const urlle = `${g_devurl}/public/annuaire_interne/users_liste_sousservice.php`
+    const urlle = `${g_devurl}${g_pathurl}users_liste_sousservice.php`
     const params = new URLSearchParams([['sousservice', libelle]])
     const response = await axios.get(urlle, {params})
         .catch(function (error) {
@@ -53,7 +54,7 @@ export async function listeEmployesParSousService(libelle) {
 }
 
 export async function listeEmployesParNom(libelle) {
-    const urlle = `${g_devurl}/public/annuaire_interne/users_liste_displayname.php`
+    const urlle = `${g_devurl}${g_pathurl}users_liste_displayname.php`
     const params = new URLSearchParams([['displayname', libelle]])
     const response = await axios.get(urlle, {params})
         .catch(function (error) {
@@ -65,7 +66,7 @@ export async function listeEmployesParNom(libelle) {
 }
 
 export async function listeEmployesParCompte(libelle) {
-    const urlle = `${g_devurl}/public/annuaire_interne/users_liste_samaccountname.php`
+    const urlle = `${g_devurl}${g_pathurl}users_liste_samaccountname.php`
     const params = new URLSearchParams([['samaccountname', libelle]])
     const response = await axios.get(urlle, {params})
         .catch(function (error) {
@@ -77,7 +78,7 @@ export async function listeEmployesParCompte(libelle) {
 }
 
 export async function dataEmploye(compte) {
-    const urlle = `${g_devurl}/public/annuaire_interne/user_data.php`
+    const urlle = `${g_devurl}${g_pathurl}user_data.php`
     const params = new URLSearchParams([['samaccountname', compte]])
     const response = await axios.get(urlle, {params})
         .catch(function (error) {

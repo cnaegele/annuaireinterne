@@ -1,5 +1,5 @@
 <template>
-    Nom | Compte(VDL) :&nbsp;<input class="criteres" type="text" v-model="criteresNomCompte" @keyup="rechercheEmploye "/>
+    Nom | Compte(VDL) :&nbsp;<input id="inpcriteres" class="criteres" type="text" v-model="criteresNomCompte" @keyup="rechercheEmploye "/>
 </template>
 
 <script setup>
@@ -34,6 +34,11 @@
 
     async function getlisteEmployeParNom(libelle) {
         lesData.listeEmployes = await listeEmployesParNom(libelle)
+        if (lesData.listeEmployes.length == 0) {
+            if (libelle.length >= 4) {
+                getlisteEmployeParCompte(libelle)    
+            }
+        }
         //alert(JSON.stringify(lesData.listeEmployes))
     }
 </script>

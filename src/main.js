@@ -20,3 +20,4 @@ app.use(createPinia())
 registerPlugins(app)
 
 app.mount('#app')
+document.getElementById("inpcriteres").focus()
