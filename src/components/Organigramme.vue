@@ -7,7 +7,7 @@
         >
             <template v-slot:activator="{ props }">
                 <v-btn
-                    color="primary"
+                    color="rgb(100, 100, 100)"
                     size="small"
                     v-bind="props"
                     v-on:click="getlisteEmployeParDirection(direction.libelle)"
@@ -26,7 +26,7 @@
                         >
                             <template v-slot:activator="{ props }">
                                 <v-btn
-                                    color="primary"
+                                    color="rgb(100, 100, 100)"
                                     size="small"
                                     v-bind="props"
                                     v-on:click="getlisteEmployeParService(service.libelle)"
@@ -39,7 +39,7 @@
                                     v-for="(sousservice, index) in service.sousservices"
                                     :key="index"
                                 >
-                                    <v-list-item-title v-on:click="getlisteEmployeParSousService(service.libelle + '@' + sousservice.libelle)">{{ sousservice.libelle }}</v-list-item-title>
+                                    <v-list-item-title class="sousservice" v-on:click="getlisteEmployeParSousService(service.libelle + '@' + sousservice.libelle)">{{ sousservice.libelle }}</v-list-item-title>
                                 </v-list-item>
                             </v-list>
                         </v-menu>           

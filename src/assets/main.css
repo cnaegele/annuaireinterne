@@ -1,11 +1,24 @@
 input.criteres {
-    background-color:grey;
+    color: black;
+    background-color:rgb(220, 220, 220);
+    border: 1px solid rgb(176, 176, 176);
+}
+input.criteres:focus {
     border: 1px solid white;
+    outline: none;
 }
 span.cardTitre {
     font-size: x-large;
     font-weight: bold;
 }
-span.listeGroupes {
+div.listeGroupes {
     font-size: x-small;
+}
+.sousservice {
+    cursor: pointer;
+}
+/* Pour que le Tous s'affiche en entier si il est choisi pour les élements par page */
+/* ATTENTION, je n'ai pas détecté d'effet indésirable mais cette classe est utilisée ailleurs */
+.v-field__field {
+    width: 10ch;    
 }

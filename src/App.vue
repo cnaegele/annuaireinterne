@@ -5,6 +5,7 @@
       <Suspense><Organigramme/></Suspense>
       <ListeEmployes/>
     </v-main>
+    <AppFooter />
   </v-app>
 </template>
 

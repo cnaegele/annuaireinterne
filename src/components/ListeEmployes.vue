@@ -2,7 +2,7 @@
     <div>
         <v-data-table
             :items="lesData.listeEmployes"
-            :items-per-page="25"
+            :items-per-page="20"
             :hide-no-data="true"
             density="compact"
             @click:row="getDataEmploye"
@@ -11,7 +11,6 @@
         
     </div>
 
-  <!-- Essai en cours -->
   <v-dialog max-width="1000">
   <template v-slot:activator="{ props: activatorProps }">
     <div style="display: none;">
@@ -52,13 +51,13 @@
       </v-card-text>
       <v-spacer></v-spacer>
       <v-card-text>
-        <div>Groupes: <span class="listeGroupes">{{ lesData.groupesEmploye }}</span></div>
+        <div>Groupes:</div>
+        <div class="listeGroupes" v-for="(groupe, index) in lesData.groupesEmploye" :key="groupe.id">{{ index }}:{{ groupe }}</div>
       </v-card-text>
 
     </v-card>
   </template>
 </v-dialog>
-<!-- Fin essai en cours -->
 
 </template>
 
@@ -144,9 +143,8 @@
       if (lesData.dataEmploye[0].hasOwnProperty('memberof')) {
         lesData.groupesEmploye = lesData.dataEmploye[0].memberof
       } else {
-        lesData.groupesEmploye = '' 
+        lesData.groupesEmploye = {} 
       }
-      console.log(lesData.groupesEmploye)
       document.getElementById("btnActiveCard").click()
       //alert(JSON.stringify(lesData.dataEmploye))
     }
