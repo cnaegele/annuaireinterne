@@ -18,7 +18,7 @@ export async function getVdLOrganigrammeLDAPDirections() {
 }
 
 export async function listeEmployesParDirection(libelle) {
-    const urlle = `${g_devurl}/${g_pathurl}users_liste_direction.php`
+    const urlle = `${g_devurl}${g_pathurl}users_liste_direction.php`
     const params = new URLSearchParams([['direction', libelle]])
     const response = await axios.get(urlle, {params})
         .catch(function (error) {
